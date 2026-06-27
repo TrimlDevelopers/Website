@@ -5,12 +5,11 @@ import {
   Boxes,
   Brain,
   Workflow,
-  Cloud,
+  BarChart3,
   ArrowRight,
 } from 'lucide-react'
 import { services } from '../../data/content'
-import Section from '../ui/Section'
-import SectionHeader from '../ui/SectionHeader'
+import AnimateIn from '../ui/AnimateIn'
 
 const iconMap: Record<string, typeof Code2> = {
   code: Code2,
@@ -18,47 +17,55 @@ const iconMap: Record<string, typeof Code2> = {
   boxes: Boxes,
   brain: Brain,
   workflow: Workflow,
-  cloud: Cloud,
+  chart: BarChart3,
 }
 
 export default function ServicesOverview() {
   return (
-    <Section>
-      <SectionHeader
-        label="Services"
-        title="End-to-End Software Solutions"
-        description="From custom applications to AI-powered automation, we deliver technology that drives real business outcomes."
-      />
+    <section className="bg-surface-light py-12 sm:py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <AnimateIn className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="section-label mb-2">Our Core Services</p>
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl lg:text-4xl">
+              Solutions Designed for Your Business Growth
+            </h2>
+          </div>
+          <Link
+            to="/services"
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-500 transition-colors hover:text-brand-600"
+          >
+            View All Services
+            <ArrowRight size={16} />
+          </Link>
+        </AnimateIn>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        {services.map((service) => {
-          const Icon = iconMap[service.icon] ?? Code2
-          return (
-            <div
-              key={service.id}
-              className="card-hover group flex h-full flex-col rounded-2xl border border-white/[0.06] glass-card p-6 lg:p-7"
-            >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/20 to-indigo-500/10 text-brand-400 ring-1 ring-brand-500/20 transition-all group-hover:ring-brand-400/40">
-                <Icon size={22} />
-              </div>
-              <h3 className="text-lg font-semibold leading-snug text-white">{service.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-400">
-                {service.shortDescription}
-              </p>
-            </div>
-          )
-        })}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = iconMap[service.icon] ?? Code2
+            return (
+              <AnimateIn key={service.id} delay={index * 80} animation="scale-in">
+                <div className="service-card card-hover flex h-full flex-col rounded-2xl p-6 lg:p-7">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={22} />
+                  </div>
+                  <h3 className="text-lg font-bold text-navy-900">{service.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
+                    {service.shortDescription}
+                  </p>
+                  <Link
+                    to="/services"
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-500 transition-all hover:gap-2 hover:text-brand-600"
+                  >
+                    Learn More
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </AnimateIn>
+            )
+          })}
+        </div>
       </div>
-
-      <div className="mt-12 flex justify-center">
-        <Link
-          to="/services"
-          className="inline-flex items-center gap-2 rounded-xl border border-brand-500/30 bg-brand-500/5 px-5 py-2.5 text-sm font-medium text-brand-300 transition-all hover:border-brand-400/50 hover:bg-brand-500/10"
-        >
-          View all services
-          <ArrowRight size={16} />
-        </Link>
-      </div>
-    </Section>
+    </section>
   )
 }

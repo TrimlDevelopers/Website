@@ -1,25 +1,54 @@
 export const company = {
   name: 'TriML Technologies',
   tagline: 'Intelligent Software. Automated Operations.',
+  heroBadge: 'AI • AUTOMATION • INNOVATION',
+  heroTitle: 'Transforming Businesses Through Intelligent',
+  heroTitleAccent: 'Technology',
+  heroSubtitle:
+    'We build custom software, AI solutions, microservices and automation systems that help organizations streamline operations, reduce downtime and drive growth.',
   positioning:
     'We help businesses automate operations, reduce manual work, and improve efficiency through custom software, AI solutions, microservices, and cloud-native applications.',
-  email: 'hello@triml.tech',
-  phone: '+1 (555) 123-4567',
+  email: 'info@trimltechnologies.com',
+  phone: '+91 98765 43210',
+  website: 'www.trimltechnologies.com',
+  location: 'Pune, Maharashtra, India',
+}
+
+export const socialLinks = [
+  { label: 'LinkedIn', href: 'https://linkedin.com' },
+  { label: 'Twitter', href: 'https://twitter.com' },
+  { label: 'GitHub', href: 'https://github.com' },
+  { label: 'YouTube', href: 'https://youtube.com' },
+]
+
+export const footerLinks = {
+  legal: [
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms & Conditions', href: '#' },
+  ],
 }
 
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products' },
+  { label: 'Solutions', href: '/products' },
   { label: 'Industries', href: '/industries' },
+  { label: 'Portfolio', href: '/#projects' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
+]
+
+export const heroFeatures = [
+  { label: 'AI-Powered Solutions', icon: 'brain' },
+  { label: 'Scalable Architecture', icon: 'layers' },
+  { label: 'Cloud Native', icon: 'cloud' },
 ]
 
 export const services = [
   {
     id: 'custom-software',
     title: 'Custom Software Development',
-    shortDescription:
-      'Tailored applications built to solve unique business challenges at scale.',
+    shortDescription: 'Enterprise-grade applications tailored to your business needs.',
     description:
       'We design and develop tailored software applications that solve unique business challenges. Our solutions are scalable, secure, and built according to client requirements.',
     icon: 'code',
@@ -27,8 +56,7 @@ export const services = [
   {
     id: 'website-development',
     title: 'Website Development',
-    shortDescription:
-      'Professional, responsive, and SEO-friendly websites that generate leads.',
+    shortDescription: 'Modern, responsive websites that deliver exceptional experiences.',
     description:
       'We create professional, responsive, and SEO-friendly websites that help businesses establish a strong digital presence and generate leads.',
     icon: 'globe',
@@ -36,8 +64,7 @@ export const services = [
   {
     id: 'microservices',
     title: 'Microservices Development',
-    shortDescription:
-      'Modular architectures for maintainability, flexibility, and performance.',
+    shortDescription: 'Scalable APIs and cloud-native architecture for performance.',
     description:
       'We build modular and scalable microservices architectures using modern technologies. This approach improves maintainability, flexibility, and system performance.',
     icon: 'boxes',
@@ -45,8 +72,7 @@ export const services = [
   {
     id: 'ai-solutions',
     title: 'AI Solutions',
-    shortDescription:
-      'Chatbots, predictive analytics, computer vision, and intelligent automation.',
+    shortDescription: 'Smart AI systems, chatbots, and computer vision applications.',
     description:
       'Our AI services include chatbots, intelligent assistants, predictive analytics, computer vision applications, and automation systems that improve business efficiency.',
     icon: 'brain',
@@ -54,30 +80,28 @@ export const services = [
   {
     id: 'business-automation',
     title: 'Business Automation',
-    shortDescription:
-      'Automate reporting, approvals, CRM workflows, and customer interactions.',
+    shortDescription: 'Automate workflows and processes to improve efficiency.',
     description:
       'We automate repetitive processes such as reporting, approvals, notifications, CRM workflows, and customer interactions to save time and reduce operational costs.',
     icon: 'workflow',
   },
   {
-    id: 'cloud-devops',
-    title: 'Cloud & DevOps',
-    shortDescription:
-      'Deploy, manage, and scale with Docker, CI/CD, and cloud infrastructure.',
+    id: 'data-analytics',
+    title: 'Data & Analytics',
+    shortDescription: 'Transform your data into actionable insights and business value.',
     description:
-      'We help businesses deploy, manage, and scale applications using modern cloud infrastructure, Docker containers, and CI/CD pipelines.',
-    icon: 'cloud',
+      'We help businesses collect, analyze, and visualize data through dashboards, predictive models, and reporting systems that drive smarter decisions.',
+    icon: 'chart',
   },
 ]
 
 export const products = [
   {
     id: 'cmms',
-    title: 'CMMS',
+    title: 'TriMaint CMMS',
     subtitle: 'Computerized Maintenance Management System',
     description:
-      'A Computerized Maintenance Management System that helps organizations manage assets, work orders, preventive maintenance schedules, spare parts inventory, and maintenance analytics.',
+      'Manage assets, work orders, preventive maintenance schedules, spare parts inventory, and maintenance analytics from one platform.',
     features: [
       'Asset & equipment tracking',
       'Work order management',
@@ -87,13 +111,14 @@ export const products = [
     ],
     icon: 'wrench',
     featured: true,
+    tech: ['React', 'Spring Boot', 'PostgreSQL'],
   },
   {
     id: 'ai-vision',
     title: 'AI Vision Analytics',
     subtitle: 'Computer Vision Monitoring Platform',
     description:
-      'An AI-powered monitoring platform that uses computer vision and deep learning to analyze production lines, monitor safety compliance, detect defects, and generate actionable insights.',
+      'AI-powered monitoring using computer vision to analyze production lines, monitor safety compliance, and detect defects in real time.',
     features: [
       'Production line monitoring',
       'Safety compliance detection',
@@ -103,13 +128,14 @@ export const products = [
     ],
     icon: 'eye',
     featured: false,
+    tech: ['Python', 'AI/ML', 'OpenCV'],
   },
   {
     id: 'automation-suite',
     title: 'Business Automation Suite',
     subtitle: 'Cross-Department Workflow Platform',
     description:
-      'A platform that automates workflows, reporting, approvals, notifications, and operational tasks across multiple business departments.',
+      'Automate workflows, reporting, approvals, notifications, and operational tasks across multiple business departments.',
     features: [
       'Workflow automation',
       'Automated reporting',
@@ -119,6 +145,38 @@ export const products = [
     ],
     icon: 'zap',
     featured: false,
+    tech: ['React', 'FastAPI', 'MongoDB'],
+  },
+]
+
+export const projects = [
+  {
+    id: 'trimaint',
+    title: 'TriMaint CMMS',
+    description: 'Maintenance management system for manufacturing operations.',
+    tech: ['React', 'Spring Boot', 'PostgreSQL'],
+    color: 'from-blue-600 to-blue-800',
+  },
+  {
+    id: 'ai-vision',
+    title: 'AI Vision Analytics',
+    description: 'Production monitoring with computer vision and deep learning.',
+    tech: ['Python', 'AI/ML', 'OpenCV'],
+    color: 'from-indigo-600 to-purple-800',
+  },
+  {
+    id: 'dashboard',
+    title: 'Business Dashboard',
+    description: 'Analytics and reporting platform for operational insights.',
+    tech: ['React', 'FastAPI', 'MongoDB'],
+    color: 'from-cyan-600 to-blue-700',
+  },
+  {
+    id: 'helpdesk',
+    title: 'Helpdesk System',
+    description: 'Ticket management and customer support automation platform.',
+    tech: ['React', 'Node.js', 'MySQL'],
+    color: 'from-slate-600 to-slate-800',
   },
 ]
 
@@ -126,137 +184,139 @@ export const industries = [
   {
     id: 'manufacturing',
     title: 'Manufacturing',
+    shortDescription: 'Reduce downtime and optimize production with smart maintenance systems.',
     description:
-      'Manufacturing companies require software solutions to manage production, maintenance, quality control, inventory, and workforce efficiency. TriML can help manufacturers reduce downtime, improve asset utilization, and automate daily operations through CMMS, dashboards, and AI-powered analytics.',
+      'Manufacturing companies require software solutions to manage production, maintenance, quality control, inventory, and workforce efficiency. TriML helps manufacturers reduce downtime and automate operations.',
     icon: 'factory',
+    image: 'https://images.unsplash.com/photo-1565043666747-69fbe6ad340f?w=800&q=80',
   },
   {
     id: 'logistics',
-    title: 'Logistics',
+    title: 'Logistics & Supply Chain',
+    shortDescription: 'Real-time visibility into shipments, fleets, and warehouse workflows.',
     description:
-      'Logistics businesses need real-time visibility into shipments, warehouses, vehicle tracking, and operational workflows. We can provide logistics dashboards, tracking systems, and automation tools to improve efficiency and reduce manual work.',
+      'Logistics businesses need real-time visibility into shipments, warehouses, vehicle tracking, and operational workflows. We provide dashboards, tracking systems, and automation tools.',
     icon: 'truck',
+    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80',
   },
   {
     id: 'warehousing',
     title: 'Warehousing',
+    shortDescription: 'Inventory management, barcode systems, and intelligent reporting.',
     description:
-      'Warehouses require inventory management, stock monitoring, barcode systems, and reporting solutions. Our software can help warehouse managers optimize storage, improve inventory accuracy, and monitor operations through intelligent dashboards.',
+      'Warehouses require inventory management, stock monitoring, barcode systems, and reporting solutions. Our software helps optimize storage and improve inventory accuracy.',
     icon: 'warehouse',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
   },
   {
     id: 'healthcare',
     title: 'Healthcare',
+    shortDescription: 'Secure patient management, scheduling, and AI-powered support.',
     description:
-      'Healthcare organizations need patient management systems, appointment scheduling, reporting dashboards, and AI-powered support solutions. We can build secure and scalable healthcare applications that improve operational efficiency.',
+      'Healthcare organizations need patient management systems, appointment scheduling, reporting dashboards, and AI-powered support solutions built for security and scale.',
     icon: 'heart',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
   },
   {
     id: 'education',
     title: 'Education',
+    shortDescription: 'Student portals, LMS platforms, and administrative automation.',
     description:
-      'Educational institutions require student portals, attendance systems, learning management systems, and analytics dashboards. Our solutions help streamline administrative processes and improve communication.',
+      'Educational institutions require student portals, attendance systems, learning management systems, and analytics dashboards to streamline administrative processes.',
     icon: 'graduation',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
   },
   {
     id: 'retail',
-    title: 'Retail',
+    title: 'Retail & eCommerce',
+    shortDescription: 'Inventory, sales analytics, and customer engagement platforms.',
     description:
-      'Retail businesses benefit from inventory management, sales analytics, customer engagement systems, and e-commerce platforms. We can help retailers improve customer experience and business performance.',
+      'Retail businesses benefit from inventory management, sales analytics, customer engagement systems, and e-commerce platforms that improve customer experience.',
     icon: 'shopping',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
   },
   {
     id: 'startups',
     title: 'Startups',
+    shortDescription: 'MVPs, cloud-native apps, and automation for rapid scaling.',
     description:
       'Startups often need scalable web applications, MVP development, cloud-native architectures, and automation solutions. We help startups launch quickly and scale efficiently.',
     icon: 'rocket',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
   },
   {
     id: 'finance',
     title: 'Finance',
+    shortDescription: 'Secure, compliant software for reporting and automation.',
     description:
-      'Financial organizations need secure, compliant software for reporting, automation, and data analytics. We build robust systems that streamline operations while maintaining security and regulatory standards.',
+      'Financial organizations need secure, compliant software for reporting, automation, and data analytics while maintaining regulatory standards.',
     icon: 'chart',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
   },
 ]
 
-export const problems = [
-  {
-    title: 'Manual, Repetitive Workflows',
-    description:
-      'Teams spend hours on tasks that could be automated — from data entry to report generation.',
-  },
-  {
-    title: 'Disconnected Systems',
-    description:
-      'Siloed tools and spreadsheets create bottlenecks, errors, and poor visibility across departments.',
-  },
-  {
-    title: 'Unplanned Downtime',
-    description:
-      'Without proactive maintenance and monitoring, equipment failures disrupt production and increase costs.',
-  },
-  {
-    title: 'Limited Data Insights',
-    description:
-      'Businesses collect data but lack the tools to turn it into actionable intelligence and predictions.',
-  },
-  {
-    title: 'Scaling Challenges',
-    description:
-      'Legacy monoliths and manual processes struggle to keep up as your business grows.',
-  },
-  {
-    title: 'Slow Digital Transformation',
-    description:
-      'Outdated websites and internal tools hold back customer engagement and operational efficiency.',
-  },
+export const whyTriML = [
+  'Experienced Team',
+  'Modern Technologies',
+  'Scalable Solutions',
+  'On-Time Delivery',
+  '24/7 Support',
+  'Quality First Approach',
 ]
 
-export const techStack = {
-  frontend: ['React', 'TypeScript', 'Tailwind CSS', 'PHP'],
-  backend: ['FastAPI', 'Spring Boot', 'Node.js'],
-  database: ['PostgreSQL', 'MongoDB', 'MySQL'],
-  cloud: ['Docker', 'AWS', 'Render', 'Vercel'],
-  ai: ['OpenAI', 'Computer Vision', 'Predictive Analytics'],
-}
+export const trustFeatures = [
+  { title: 'Secure & Reliable', subtitle: 'Data Protection', icon: 'shield' },
+  { title: 'Cloud Ready', subtitle: 'Scalable Infrastructure', icon: 'cloud' },
+  { title: 'AI-Powered', subtitle: 'Smart Automation', icon: 'brain' },
+  { title: 'High Performance', subtitle: 'Fast & Efficient', icon: 'zap' },
+]
+
+export const techStack = [
+  'React',
+  'Node.js',
+  'Python',
+  'FastAPI',
+  'Java',
+  'PostgreSQL',
+  'Docker',
+  'AWS',
+]
 
 export const processSteps = [
   {
     step: '01',
     title: 'Discovery',
-    description:
-      'We analyze your business goals, pain points, and technical requirements to define a clear project roadmap.',
+    description: 'Understand your goals, challenges, and technical requirements.',
+    icon: 'search',
   },
   {
     step: '02',
-    title: 'Design',
-    description:
-      'Our team creates wireframes, architecture plans, and UX designs aligned with your brand and users.',
+    title: 'Planning',
+    description: 'Define architecture, roadmap, and project milestones.',
+    icon: 'map',
   },
   {
     step: '03',
     title: 'Development',
-    description:
-      'We build your solution using agile sprints, modern frameworks, and best practices for quality and speed.',
+    description: 'Build with agile sprints using modern frameworks.',
+    icon: 'code',
   },
   {
     step: '04',
     title: 'Testing',
-    description:
-      'Rigorous QA, performance testing, and security reviews ensure your application is production-ready.',
+    description: 'QA, performance, and security validation before launch.',
+    icon: 'check',
   },
   {
     step: '05',
     title: 'Deployment',
-    description:
-      'We deploy to cloud infrastructure with CI/CD pipelines, monitoring, and documentation in place.',
+    description: 'Cloud deployment with CI/CD and monitoring setup.',
+    icon: 'rocket',
   },
   {
     step: '06',
     title: 'Support',
-    description:
-      'Ongoing maintenance, feature updates, and dedicated support keep your systems running smoothly.',
+    description: 'Ongoing maintenance, updates, and dedicated support.',
+    icon: 'headphones',
   },
 ]

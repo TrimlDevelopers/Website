@@ -4,16 +4,21 @@ import Header from './Header'
 import Footer from './Footer'
 
 export default function Layout() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (hash) {
+      const el = document.querySelector(hash)
+      el?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
 
   return (
-    <div className="flex min-h-screen flex-col bg-surface-950">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header />
-      <main className="flex-1 pt-[4.25rem]">
+      <main className="flex-1 pt-16">
         <Outlet />
       </main>
       <Footer />

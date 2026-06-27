@@ -1,46 +1,27 @@
 import { techStack } from '../../data/content'
-import Section from '../ui/Section'
 import SectionHeader from '../ui/SectionHeader'
-
-const categories: { key: keyof typeof techStack; label: string; accent: string }[] = [
-  { key: 'frontend', label: 'Frontend', accent: 'from-cyan-500/10 to-transparent ring-cyan-500/20' },
-  { key: 'backend', label: 'Backend', accent: 'from-emerald-500/10 to-transparent ring-emerald-500/20' },
-  { key: 'database', label: 'Database', accent: 'from-amber-500/10 to-transparent ring-amber-500/20' },
-  { key: 'cloud', label: 'Cloud & DevOps', accent: 'from-blue-500/10 to-transparent ring-blue-500/20' },
-  { key: 'ai', label: 'AI & Analytics', accent: 'from-purple-500/10 to-transparent ring-purple-500/20' },
-]
+import AnimateIn from '../ui/AnimateIn'
 
 export default function TechnologyExpertise() {
   return (
-    <Section bordered muted>
-      <SectionHeader
-        label="Technology"
-        title="Built With Modern, Proven Technologies"
-        description="We leverage industry-leading tools and frameworks to deliver robust, scalable, and future-proof solutions."
-      />
+    <section className="border-y border-slate-200 bg-white py-12 sm:py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          label="Technologies We Use"
+          title="Modern Technologies for Modern Solutions"
+          description="We leverage industry-leading tools and frameworks to deliver robust, scalable solutions."
+        />
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
-        {categories.map((cat) => (
-          <div
-            key={cat.key}
-            className={`flex h-full flex-col rounded-2xl border border-white/[0.06] bg-gradient-to-b ${cat.accent} p-5 ring-1`}
-          >
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-gray-300">
-              {cat.label}
-            </h3>
-            <div className="flex flex-1 flex-wrap content-start gap-2">
-              {techStack[cat.key].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-lg border border-white/10 bg-surface-950/70 px-2.5 py-1.5 text-xs font-medium text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {techStack.map((tech, index) => (
+            <AnimateIn key={tech} delay={index * 70} animation="scale-in" duration={500}>
+              <div className="flex h-12 min-w-[6.5rem] flex-1 items-center justify-center rounded-xl border border-slate-200 bg-surface-light px-4 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/30 hover:bg-brand-50 hover:text-brand-600 hover:shadow-md sm:h-14 sm:min-w-[7rem] sm:flex-none sm:px-6">
+                {tech}
+              </div>
+            </AnimateIn>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   )
 }
