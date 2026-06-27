@@ -45,22 +45,20 @@ export default function ServicesOverview() {
             const Icon = iconMap[service.icon] ?? Code2
             return (
               <AnimateIn key={service.id} delay={index * 80} animation="scale-in">
-                <div className="service-card card-hover flex h-full flex-col rounded-2xl p-6 lg:p-7">
+                <Link
+                  to={`/services#${service.id}`}
+                  className="service-card card-hover group flex h-full flex-col rounded-2xl p-6 lg:p-7"
+                >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 transition-transform duration-300 group-hover:scale-110">
                     <Icon size={22} />
                   </div>
-                  <h3 className="text-lg font-bold text-navy-900">{service.title}</h3>
+                  <h3 className="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">
+                    {service.title}
+                  </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
                     {service.shortDescription}
                   </p>
-                  <Link
-                    to="/services"
-                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-500 transition-all hover:gap-2 hover:text-brand-600"
-                  >
-                    Learn More
-                    <ArrowRight size={14} />
-                  </Link>
-                </div>
+                </Link>
               </AnimateIn>
             )
           })}

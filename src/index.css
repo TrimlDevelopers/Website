@@ -195,6 +195,58 @@ body {
   animation: pulse-soft 2.5s ease-in-out infinite;
 }
 
+@keyframes why-bar-grow {
+  from {
+    height: 0;
+    opacity: 0.4;
+  }
+  to {
+    height: var(--bar-height);
+    opacity: 1;
+  }
+}
+
+@keyframes why-visual-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes why-orb-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.why-visual-enter {
+  animation: why-visual-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.why-chart-bar {
+  height: 0;
+  animation: why-bar-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(400ms + var(--bar-delay, 0ms));
+}
+
+.why-orb {
+  animation: why-orb-pulse 8s ease-in-out infinite;
+}
+
+.why-orb--secondary {
+  animation-delay: 2s;
+}
+
 @media (max-width: 767px) {
   .animate-float {
     animation: none;
@@ -210,8 +262,15 @@ body {
   .header-enter,
   .hero-enter,
   .hero-dashboard-enter,
-  .btn-pulse {
+  .btn-pulse,
+  .why-visual-enter,
+  .why-chart-bar,
+  .why-orb {
     animation: none !important;
+  }
+
+  .why-chart-bar {
+    height: var(--bar-height);
   }
 
   .animate-in {

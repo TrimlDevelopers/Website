@@ -18,7 +18,7 @@ export default function SectionHeader({
   className = '',
 }: SectionHeaderProps) {
   return (
-    <AnimateIn className={`mb-10 lg:mb-12 max-w-3xl ${centered ? 'mx-auto text-center' : ''} ${className}`}>
+    <AnimateIn className={`max-w-3xl ${centered ? 'mx-auto text-center' : ''} ${className || 'mb-10 lg:mb-12'}`}>
       {label && <p className={`section-label mb-3 ${dark ? 'text-brand-300' : ''}`}>{label}</p>}
       <h2
         className={`text-balance text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl ${

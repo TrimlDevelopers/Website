@@ -33,7 +33,6 @@ export const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Solutions', href: '/products' },
   { label: 'Industries', href: '/industries' },
-  { label: 'Portfolio', href: '/#projects' },
   { label: 'About Us', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ]
@@ -52,6 +51,7 @@ export const services = [
     description:
       'We design and develop tailored software applications that solve unique business challenges. Our solutions are scalable, secure, and built according to client requirements.',
     icon: 'code',
+    highlights: ['Scalable architecture', 'Secure by design', 'Agile delivery', 'Long-term support'],
   },
   {
     id: 'website-development',
@@ -60,6 +60,7 @@ export const services = [
     description:
       'We create professional, responsive, and SEO-friendly websites that help businesses establish a strong digital presence and generate leads.',
     icon: 'globe',
+    highlights: ['Responsive design', 'SEO optimized', 'Fast performance', 'CMS integration'],
   },
   {
     id: 'microservices',
@@ -68,6 +69,7 @@ export const services = [
     description:
       'We build modular and scalable microservices architectures using modern technologies. This approach improves maintainability, flexibility, and system performance.',
     icon: 'boxes',
+    highlights: ['API-first design', 'Cloud-native', 'Independent scaling', 'Fault tolerance'],
   },
   {
     id: 'ai-solutions',
@@ -76,6 +78,7 @@ export const services = [
     description:
       'Our AI services include chatbots, intelligent assistants, predictive analytics, computer vision applications, and automation systems that improve business efficiency.',
     icon: 'brain',
+    highlights: ['Chatbots & assistants', 'Computer vision', 'Predictive analytics', 'Process automation'],
   },
   {
     id: 'business-automation',
@@ -84,6 +87,7 @@ export const services = [
     description:
       'We automate repetitive processes such as reporting, approvals, notifications, CRM workflows, and customer interactions to save time and reduce operational costs.',
     icon: 'workflow',
+    highlights: ['Workflow automation', 'CRM integration', 'Report generation', 'Approval pipelines'],
   },
   {
     id: 'data-analytics',
@@ -92,6 +96,7 @@ export const services = [
     description:
       'We help businesses collect, analyze, and visualize data through dashboards, predictive models, and reporting systems that drive smarter decisions.',
     icon: 'chart',
+    highlights: ['Live dashboards', 'Predictive models', 'Data pipelines', 'Business intelligence'],
   },
 ]
 
@@ -256,12 +261,36 @@ export const industries = [
 ]
 
 export const whyTriML = [
-  'Experienced Team',
-  'Modern Technologies',
-  'Scalable Solutions',
-  'On-Time Delivery',
-  '24/7 Support',
-  'Quality First Approach',
+  {
+    title: 'Experienced Team',
+    description: 'Seasoned engineers dedicated to your success',
+    icon: 'users',
+  },
+  {
+    title: 'Modern Technologies',
+    description: 'Latest frameworks, cloud, and AI tooling',
+    icon: 'sparkles',
+  },
+  {
+    title: 'Scalable Solutions',
+    description: 'Architecture that grows with your business',
+    icon: 'trending',
+  },
+  {
+    title: 'On-Time Delivery',
+    description: 'Agile sprints with clear milestones',
+    icon: 'clock',
+  },
+  {
+    title: '24/7 Support',
+    description: 'Always-on assistance when you need it',
+    icon: 'headphones',
+  },
+  {
+    title: 'Quality First Approach',
+    description: 'Rigorous testing and best practices',
+    icon: 'award',
+  },
 ]
 
 export const trustFeatures = [
